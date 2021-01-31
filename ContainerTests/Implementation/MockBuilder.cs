@@ -1,6 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using ContainerTests.Contracts;
+using ContainerTests.Models;
+using Moq;
+using System;
+using System.Collections.Generic;
 using System.Collections.Immutable;
-using ContainerTests.Contracts;
 
 namespace ContainerTests.Implementation
 {
@@ -24,6 +27,17 @@ namespace ContainerTests.Implementation
                }
 
                _registrations.Add(mockRegistration);
+          }
+
+          public void Register<T>(bool canRefresh = true,
+               MockBehavior behavior = MockBehavior.Loose,
+               Action<Mock<T>> configureAction = null,
+               Func<T> factory = null)
+               where T : class
+          {
+               var registration = new MockRegistration<T>(canRefresh, behavior, configureAction, factory);
+
+               Register(registration);
           }
 
           private readonly List<IMockRegistration> _registrations;

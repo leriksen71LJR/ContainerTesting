@@ -103,7 +103,7 @@ namespace ContainerTests.Samples.Tests.Lightweight
           private static TestingProfile GetProfile()
           {
                return new TestingProfile(
-                    mocks: new MockProfile(builder => { builder.Register(new MockRegistration<ITestMock1>()); }),
+                    mocks: new MockProfile(builder => { builder.Register<ITestMock1>(); }),
                     services: new ContainerProfile(builder => { },
                          builder =>
                          {

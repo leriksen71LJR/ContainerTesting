@@ -44,10 +44,10 @@ namespace ContainerTests.Samples.Tests.Lightweight
           private static readonly TestingProfile TestProfile = new TestingProfile(
                mocks: new MockProfile(builder =>
                     {
-                         builder.Register(new MockRegistration<ITestMock1>(configureAction: mock =>
+                         builder.Register<ITestMock1>(configureAction: mock =>
                          {
                               mock.Setup(m => m.GetValue()).Returns(() => DateTime.Now.ToString());
-                         }));
+                         });
                     }),
                services: new LightweightProfile((builder, resolver) =>
                     {
