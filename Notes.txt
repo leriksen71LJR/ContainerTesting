@@ -1,0 +1,25 @@
+﻿* BaseContainerTests<TService> or <TProfile,TSetup>
+DONE
+* TestFixture single scope only 
+DONE sequential and parallel support
+* Remove use of child scopes via Extension, use container only 
+DONE
+* Remove use of Services property 
+DONE
+* Get/Create mock thru Mock<T>() 
+DONE retrieve thru method, create thru profile
+* How can we auto indicate the mocks we need setup? 
+DONE we just return a list in the profile
+* Can use different testing profiles and disconnect from inheritance (pre-define elsewhere)
+DONE - supports interface and dynamic composition
+* AutoRest mocks per test?
+DONE - by default we reset the mock afters a test
+* Can we automatically detect Parallel testing and use multiple scopes
+DONE - we now have parallel and sequential test fixtures
+* Get the tested service with Service() (uses generic from class)
+DONE
+* Setup/TeardDown & OneTimeSetup/OnTimeTearDown
+DONE
+
+*Reset Flag: DefaultValues | MutableSetups | EventHandlers | Invocations
+NOT POSSIBLE :(
